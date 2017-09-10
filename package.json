@@ -1,0 +1,19 @@
+{
+  "name": "iknsa-credit-card-validator-ng-module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iknsa/credit-card-validation-ng-module.git"
+  },
+  "author": "Khalid Sookia <khalidsookia@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iknsa/credit-card-validation-ng-module/issues"
+  },
+  "homepage": "https://github.com/iknsa/credit-card-validation-ng-module#readme"
+}
