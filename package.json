@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iknsa/credit-card-validation-ng-module.git"
+    "url": "git+https://github.com/iknsa/credit-card-validator-ng-module.git"
   },
   "author": "Khalid Sookia <khalidsookia@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/iknsa/credit-card-validation-ng-module/issues"
+    "url": "https://github.com/iknsa/credit-card-validator-ng-module/issues"
   },
-  "homepage": "https://github.com/iknsa/credit-card-validation-ng-module#readme"
+  "homepage": "https://github.com/iknsa/credit-card-validator-ng-module#readme"
 }

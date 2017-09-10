@@ -1,0 +1,7 @@
+**/*.js
+**/*.js.map
+.sass-cache
+**/*.css
+node_modules
+typings
+npm-debug.log
