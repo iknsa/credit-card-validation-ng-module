@@ -15,7 +15,7 @@ const CC_TYPE_DISCOVER = 'discover';
 const CC_TYPE_DINERS = 'diners';
 const CC_TYPE_JCB = 'jcb';
 let CC_TYPE = '';
-let CVV_LENGTH = 0;
+let CVV_LENGTH = 3;
 
 export function validateCreditCardMonth(): any {
     return (control: AbstractControl): { [key: string]: any} => {
@@ -31,8 +31,9 @@ export function validateCreditCardYear(): any {
 
         const min = new Date().getFullYear();
         const max = new Date().getFullYear() + 20;
+
         return Observable
-            .of(control.value < max.toString().substr(-2) && control.value > min.toString().substr(-2))
+            .of(parseInt(control.value) <= parseInt(max.toString().substr(-2)) && parseInt(control.value) >= parseInt(min.toString().substr(-2)))
             .map(result => !!result ? null : {creditCardMonth: true})
     }
 }
@@ -41,7 +42,7 @@ export function validateCreditCardCVV():any {
     return (control: AbstractControl): { [key: string]: any} => {
 
         return Observable
-            .of(CC_TYPE !== '' && CC_TYPE === CC_TYPE_AMEX ? control.value.length === 4 : control.value.length === 3)
+            .of(CC_TYPE !== '' && control.value.length === CVV_LENGTH)
             .map(result => !!result ? null : {creditCardCVV: true})
     }
 }
@@ -82,6 +83,8 @@ export function validateCreditCardNumber():any {
  */
 function getCardType(cardNumber:string) {
     CC_TYPE = '';
+    CVV_LENGTH = 3;
+
     if (cardNumber.substr(0,1) === '4') {
         CC_TYPE = CC_TYPE_VISA;
 
@@ -90,6 +93,7 @@ function getCardType(cardNumber:string) {
 
     if (cardNumber.substr(0,2) === '34' || cardNumber.substr(0,2) === '37') {
         CC_TYPE = CC_TYPE_AMEX;
+        CVV_LENGTH = 4;
 
         return;
     }
